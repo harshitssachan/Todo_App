@@ -2,7 +2,7 @@
 
 <h1>Todo Lists</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Title</th>
@@ -18,9 +18,9 @@
         <td><%= todo_list.title %></td>
         <td><%= todo_list.string %></td>
         <td><%= todo_list.description %></td>
-        <td><%= link_to 'Show', todo_list %></td>
-        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) %></td>
-        <td><%= link_to 'Delete', todo_list, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Show', todo_list  , class: "button"%></td>
+        <td><%= link_to 'Edit', edit_todo_list_path(todo_list) , class: "button" %></td>
+        <td><%= link_to 'Delete', todo_list, class: "button" , method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,6 @@
 
 <br>
 
-<%= link_to 'New Todo List', new_todo_list_path %>
+<div class="button-container">
+  <%= link_to 'New Todo List', new_todo_list_path, class: "button new-todo-button" %>
+</div>
